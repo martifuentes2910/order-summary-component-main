@@ -6,30 +6,120 @@
   --very-pale-blue: hsl(225, 100%, 98%);
   --desaturated-blue: hsl(224, 23%, 55%);
   --dark-blue: hsl(223, 47%, 23%);
+  --low-opacity-bright-blue: hsla(245, 75%, 52%, 0.705);
 }
 body {
   background-image: url(images/pattern-background-desktop.svg);
   background-repeat: no-repeat;
-  display: flexbox;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   text-align: center;
   font-size: 16px;
   font-family: 'Red Hat Display', sans-serif;
-  margin: 0;
-  padding: 0;
 }
-.content-box__suscription {
-  flex-direction: column;
-  align-items: stretch;
+.content-box {
+  background-color: var(--very-pale-blue);
+  border-radius: 2em;
+  width: fit-content;
+  box-shadow: 0 9px 30px 0 hsl(224, 53%, 79%);
+  overflow: hidden; /* INBCREIBLE!!!!! PROPIEDAD SALVADORA!! NO SABIA COMO HACER ESTO*/
+}
+.img {
+  width: 100%;
+}
+.content-box p {
+  text-align: center;
+}
+h1 {
+  margin-bottom: 0.4em;
+  margin-top: 1.3em;
+  font-weight: 900;
+}
+p {
+  color: var(--desaturated-blue);
+  line-height: 1.5em;
+}
+.plans {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
+.text h4,
+.text p {
+  margin: 0.3em;
+}
+
+.content-box__suscription {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1em;
+}
+a {
+  color: var(--bright-blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+.button-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.button-1,
+.button-2 {
+  padding: 15px;
+  margin: 5px;
+  font-weight: 700;
+}
+.button-1 {
+  background-color: var(--bright-blue);
+  color: var(--very-pale-blue);
+
+  border-radius: 0.5em;
+}
+.button-2 {
+  color: var(--desaturated-blue);
+}
+a:hover {
+  color: var(--low-opacity-bright-blue);
+}
+.button-1:hover {
+  background-color: var(--low-opacity-bright-blue);
+}
+.button-2:hover {
+  color: var(--dark-blue);
+}
 .attribution {
   font-size: 11px;
   text-align: center;
+  margin: 1em;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+@media (max-width: 768px) {
+  body {
+    background-image: url(images/pattern-background-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .content-box {
+    width: 90vw;
+    height: fit-content;
+    margin: 1em 0;
+    overflow: scroll;
+    position: absolute;
+    box-shadow: 0px 4px 30px 0 hsl(224, 53%, 79%);
+  }
+  p {
+    line-height: 2em;
+  }
 }
